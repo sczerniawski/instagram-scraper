@@ -11,7 +11,6 @@ from .exception.instagram_auth_exception import InstagramAuthException
 from .exception.instagram_exception import InstagramException
 from .exception.instagram_not_found_exception import InstagramNotFoundException
 from .model.account import Account
-from .model.progress import Progress
 from .model.comment import Comment
 from .model.location import Location
 from .model.media import Media
