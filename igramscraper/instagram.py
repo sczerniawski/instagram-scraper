@@ -317,6 +317,7 @@ class Instagram:
                 'first': str(count),
                 'after': str(max_id)
             }
+            self.user_media_progress[str(id)] = str(max_id)
 
             headers = self.generate_headers(self.user_session,
                                             self.__generate_gis_token(
