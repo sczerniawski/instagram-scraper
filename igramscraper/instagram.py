@@ -49,6 +49,7 @@ class Instagram:
         self.user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) ' \
                           'AppleWebKit/537.36 (KHTML, like Gecko) ' \
                           'Chrome/66.0.3359.139 Safari/537.36'
+        self.user_media_progress = dict()
 
     def with_credentials(self, username, password, session_folder=None):
         """
@@ -316,6 +317,7 @@ class Instagram:
                 'first': str(count),
                 'after': str(max_id)
             }
+            self.user_media_progress[str(id)] = str(max_id)
 
             headers = self.generate_headers(self.user_session,
                                             self.__generate_gis_token(
@@ -357,6 +359,7 @@ class Instagram:
                 arr['data']['user']['edge_owner_to_timeline_media'][
                     'page_info'][
                     'has_next_page']
+            self.user_media_progress[str(id)] = str(max_id)
 
         return medias
 
